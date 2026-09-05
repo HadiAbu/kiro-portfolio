@@ -10,10 +10,14 @@
 :root {
   /* ===== COLOR PALETTE ===== */
   
-  /* Primary Colors */
-  --color-primary: #0066cc; /* Contrast ratio: 4.6:1 on white */
-  --color-primary-dark: #004d99;
-  --color-primary-light: #3385d6;
+  /* Primary Colors — brand yellow (from profile image #ffd11a) */
+  /* Text/link shade is darkened for WCAG AA contrast on white (~4.6:1). */
+  --color-primary: #8a6d00; /* readable gold for text/links/borders on light bg */
+  --color-primary-dark: #6b5500; /* hover/active text shade */
+  --color-primary-light: #b08f00;
+  --color-primary-surface: #ffd11a; /* vivid brand yellow for button/badge fills */
+  --color-primary-surface-hover: #f0c000;
+  --color-on-primary: #1a1a1a; /* dark text that sits on the yellow surface */
   --color-secondary: #ff6b6b;
   --color-secondary-dark: #ff5252;
   --color-secondary-light: #ff8787;
@@ -46,8 +50,8 @@
   --color-info-light: #d1ecf1;
   
   /* Focus/Hover States */
-  --color-focus: #0066cc;
-  --color-hover: rgba(0, 102, 204, 0.1);
+  --color-focus: #8a6d00;
+  --color-hover: rgba(138, 109, 0, 0.1);
   
   /* ===== TYPOGRAPHY ===== */
   
@@ -121,6 +125,15 @@
   --spacing-xl: var(--spacing-8);
   --spacing-2xl: var(--spacing-12);
   --spacing-3xl: var(--spacing-16);
+
+  /* Responsive section rhythm (fluid, scales with viewport) */
+  --section-gap-y: clamp(2.5rem, 6vw, 6rem);
+  --section-gap-y-sm: clamp(1.5rem, 4vw, 3rem);
+  --content-gap: clamp(1.5rem, 4vw, 3rem);
+  --element-gap: clamp(1rem, 2.5vw, 1.5rem);
+
+  /* Global horizontal gutter — content never touches the screen edge */
+  --container-gutter: clamp(1rem, 4vw, 2.5rem);
   
   /* ===== SIZING ===== */
   
@@ -253,9 +266,12 @@
   --color-border: #2e2e2e;
   --color-border-light: #222222;
   --color-border-dark: #3a3a3a;
-  --color-primary: #4d94ff;
-  --color-primary-dark: #3385ff;
-  --color-primary-light: #66a3ff;
-  --color-focus: #4d94ff;
-  --color-hover: rgba(77, 148, 255, 0.12);
+  --color-primary: #ffd11a; /* bright gold reads well on dark bg */
+  --color-primary-dark: #e6bc00;
+  --color-primary-light: #ffdd4d;
+  --color-primary-surface: #ffd11a;
+  --color-primary-surface-hover: #ffdd4d;
+  --color-on-primary: #1a1a1a;
+  --color-focus: #ffd11a;
+  --color-hover: rgba(255, 209, 26, 0.14);
 }

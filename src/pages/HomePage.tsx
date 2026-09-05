@@ -19,11 +19,9 @@ const HomePage: React.FC = () => {
         </title>
         <meta name="description" content={tagline} />
       </Helmet>
-      <div className="container">
-        <HeroSection />
-        <AboutSection />
-        <FeaturedProjectsSection />
-      </div>
+      <HeroSection />
+      <AboutSection />
+      <FeaturedProjectsSection />
       <ServicesSection />
     </>
   )

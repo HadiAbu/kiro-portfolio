@@ -1,5 +1,5 @@
 .featured {
-  padding: var(--spacing-16) 0;
+  padding-block: var(--section-gap-y);
 }
 
 .header {
@@ -18,8 +18,8 @@
 .grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--spacing-6);
-  margin-top: var(--spacing-8);
+  gap: var(--element-gap);
+  margin-top: var(--content-gap);
 }
 
 .card {

@@ -1,9 +1,12 @@
 .hero {
+  padding-block: var(--section-gap-y);
+}
+
+.inner {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
-  gap: var(--spacing-8);
-  padding: var(--spacing-16) 0;
+  gap: var(--content-gap);
 }
 
 .content {
@@ -42,11 +45,10 @@
 }
 
 @media (min-width: 768px) {
-  .hero {
+  .inner {
     flex-direction: row;
     justify-content: space-between;
     text-align: left;
-    padding: var(--spacing-24) 0;
   }
 
   .content {

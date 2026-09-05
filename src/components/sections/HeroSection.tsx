@@ -12,20 +12,22 @@ const HeroSection: React.FC = () => {
 
   return (
     <section className={styles.hero}>
-      <div className={styles.content}>
-        <h1 className={styles.name}>{name}</h1>
-        <p className={styles.title}>{title}</p>
-        <p className={styles.tagline}>{tagline}</p>
-        <Button onClick={scrollToServices}>View my work</Button>
-      </div>
-      <div className={styles.imageWrapper}>
-        <LazyImage
-          src={profileImage}
-          alt={`Portrait of ${name}`}
-          width={300}
-          height={300}
-          className={styles.image}
-        />
+      <div className={`container ${styles.inner}`}>
+        <div className={styles.content}>
+          <h1 className={styles.name}>{name}</h1>
+          <p className={styles.title}>{title}</p>
+          <p className={styles.tagline}>{tagline}</p>
+          <Button onClick={scrollToServices}>View my work</Button>
+        </div>
+        <div className={styles.imageWrapper}>
+          <LazyImage
+            src={profileImage}
+            alt={`Portrait of ${name}`}
+            width={300}
+            height={300}
+            className={styles.image}
+          />
+        </div>
       </div>
     </section>
   )

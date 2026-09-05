@@ -1,5 +1,5 @@
 .about {
-  padding: var(--spacing-16) 0;
+  padding-block: var(--section-gap-y);
 }
 
 .grid {

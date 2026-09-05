@@ -119,22 +119,22 @@
 
 ### Phase 7: Resume Page
 
-- [ ] **25. Create `TimelineEntry` component**
+- [x] **25. Create `TimelineEntry` component**
   Create `src/components/resume/TimelineEntry.tsx` — vertical timeline item with dot/line connector, title, subtitle, date range, optional location, and bullet list. Add `TimelineEntry.module.css`.
   _Requirement: 5.3, 5.4_
 
-- [ ] **26. Create `SkillGroup` component**
+- [x] **26. Create `SkillGroup` component**
   Create `src/components/resume/SkillGroup.tsx` — bold category label + inline skill tags for a single `SkillCategory`. Add `SkillGroup.module.css`.
   _Requirement: 5.5_
 
-- [ ] **27. Create `CertificationCard` component**
+- [x] **27. Create `CertificationCard` component**
   Create `src/components/resume/CertificationCard.tsx` — name, issuer, formatted issue date, optional external credential link. Add `CertificationCard.module.css`.
   _Requirement: 5.6_
 
-- [ ] **28. Update `src/components/resume/index.ts` barrel export**
+- [x] **28. Update `src/components/resume/index.ts` barrel export**
   Export `TimelineEntry`, `SkillGroup`, `CertificationCard`.
 
-- [ ] **29. Create `ResumePage`**
+- [x] **29. Create `ResumePage`**
   Create `src/pages/ResumePage.tsx` — four sequential sections (Experience, Education, Skills, Certifications). Experience and Education in reverse-chronological order. "Print Resume" button at the top calls `window.print()`. Sets `<title>` to `Resume — {name}`.
   _Requirement: 5.1–5.7, 10.5_
 
@@ -142,7 +142,7 @@
 
 ### Phase 8: Contact Page
 
-- [ ] **30. Create `ContactPage`**
+- [x] **30. Create `ContactPage`**
   Create `src/pages/ContactPage.tsx` — centered layout. Renders only social links present in `profile.social` (absent platforms hidden). Each link: icon, label, URL. Email uses `mailto:`. All links open in new tab with `rel="noopener noreferrer"`. Sets `<title>` to `Contact — {name}`.
   _Requirement: 6.1, 6.2, 6.3, 10.5_
 

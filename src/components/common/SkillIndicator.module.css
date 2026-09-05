@@ -42,7 +42,7 @@
   top: 0;
   left: 0;
   height: 100%;
-  background-color: var(--color-primary, #0066cc);
+  background-color: var(--color-primary, #8a6d00);
   border-radius: var(--radius-full, 9999px);
   transition: width var(--transition-base, 200ms) ease-out;
 }

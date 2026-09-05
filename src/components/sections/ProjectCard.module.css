@@ -17,8 +17,8 @@
   right: var(--spacing-3);
   z-index: 1;
   padding: var(--spacing-1) var(--spacing-2);
-  background-color: var(--color-primary);
-  color: var(--color-text-inverse);
+  background-color: var(--color-primary-surface);
+  color: var(--color-on-primary);
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-semibold);
   border-radius: var(--radius-full);

@@ -49,7 +49,7 @@
 .button:focus-visible {
   outline: var(--border-width-2) solid var(--color-focus);
   outline-offset: var(--spacing-1); /* 2px offset */
-  box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.1);
+  box-shadow: 0 0 0 4px var(--color-hover);
 }
 
 /* Active state - subtle press effect */
@@ -86,20 +86,20 @@
 /* ===== PRIMARY VARIANT ===== */
 
 .button.primary {
-  background-color: var(--color-primary);
-  border-color: var(--color-primary);
-  color: var(--color-text-inverse);
+  background-color: var(--color-primary-surface);
+  border-color: var(--color-primary-surface);
+  color: var(--color-on-primary);
 }
 
 .button.primary:hover:not(:disabled) {
-  background-color: var(--color-primary-dark);
-  border-color: var(--color-primary-dark);
+  background-color: var(--color-primary-surface-hover);
+  border-color: var(--color-primary-surface-hover);
   box-shadow: var(--shadow-md);
 }
 
 .button.primary:active:not(:disabled) {
-  background-color: #003d7a; /* Darker shade for active state */
-  border-color: #003d7a;
+  background-color: var(--color-primary-surface-hover); /* Darker shade for active state */
+  border-color: var(--color-primary-surface-hover);
   box-shadow: var(--shadow-sm);
 }
 
@@ -138,9 +138,9 @@
 }
 
 .button.outline:active:not(:disabled) {
-  background-color: rgba(0, 102, 204, 0.15);
-  border-color: #003d7a;
-  color: #003d7a;
+  background-color: var(--color-hover);
+  border-color: var(--color-primary-dark);
+  color: var(--color-primary-dark);
 }
 
 /* ===== FULL WIDTH ===== */
@@ -270,7 +270,7 @@
   }
   
   .button.outline:hover:not(:disabled) {
-    background-color: rgba(51, 133, 214, 0.15);
+    background-color: var(--color-hover);
     border-color: var(--color-primary-light);
   }
 }
