@@ -150,18 +150,18 @@
 
 ### Phase 9: Polish & Verification
 
-- [ ] **31. Verify responsive layouts**
+- [x] **31. Verify responsive layouts**
   Test all pages at 320px, 768px, and 1024px+. Confirm grid columns, navbar hamburger/collapse, hero layout, and typography scaling match design.md.
   _Requirement: 11.1, 11.2, 11.3_
 
-- [ ] **32. Verify accessibility**
+- [x] **32. Verify accessibility**
   Confirm: skip link focuses `#main-content`, all icon buttons have `aria-label`, images have correct `alt` text, `aria-current="page"` on active nav link, hamburger has `aria-expanded`, focus is trapped in mobile menu, focus indicators are visible on all interactive elements.
   _Requirement: 1.4, 1.5, 10.1–10.4_
 
-- [ ] **33. Verify theme system**
+- [x] **33. Verify theme system**
   Confirm: no flash of wrong theme on load, OS preference respected on first visit, manual toggle switches instantly, choice persists across hard refresh, dark mode tokens applied correctly across all pages.
   _Requirement: 2.1–2.5_
 
-- [ ] **34. Verify `PageLoader` Suspense fallback**
+- [x] **34. Verify `PageLoader` Suspense fallback**
   Confirm the loader appears during navigation to a lazy-loaded route chunk and disappears cleanly once the page mounts.
   _Requirement: 9.2, 9.3_

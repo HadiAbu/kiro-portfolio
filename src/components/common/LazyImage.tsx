@@ -33,19 +33,19 @@ export const LazyImage: React.FC<LazyImageProps> = ({
   onLoad,
   onError,
 }) => {
-  const [imageSrc, setImageSrc] = useState<string>(placeholder || '')
-  const [imageSrcSet, setImageSrcSet] = useState<string>('')
+  // When IntersectionObserver is unavailable, load the real image immediately
+  // by deriving it as initial state (avoids a synchronous setState in the effect).
+  const supportsObserver = typeof window !== 'undefined' && 'IntersectionObserver' in window
+  const [imageSrc, setImageSrc] = useState<string>(supportsObserver ? placeholder || '' : src)
+  const [imageSrcSet, setImageSrcSet] = useState<string>(supportsObserver ? '' : (srcSet ?? ''))
   const [isLoaded, setIsLoaded] = useState(false)
   const [hasError, setHasError] = useState(false)
   const imgRef = useRef<HTMLImageElement>(null)
 
   useEffect(() => {
-    // If browser doesn't support IntersectionObserver, load image immediately
+    // Nothing to observe when IntersectionObserver is unavailable — the real
+    // image was already set as initial state.
     if (!('IntersectionObserver' in window)) {
-      setImageSrc(src)
-      if (srcSet) {
-        setImageSrcSet(srcSet)
-      }
       return
     }
 
