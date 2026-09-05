@@ -1,0 +1,46 @@
+.services {
+  padding: var(--spacing-16) 0;
+  background-color: var(--color-background-secondary);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-6);
+  margin-top: var(--spacing-8);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+  height: 100%;
+}
+
+.icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--color-primary);
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: var(--font-size-xl);
+}
+
+.cardDescription {
+  margin: 0;
+  color: var(--color-text-secondary);
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

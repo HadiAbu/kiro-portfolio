@@ -1,0 +1,76 @@
+/**
+ * Card Component Styles
+ * Reusable card wrapper with consistent styling, elevation, and optional hover effects
+ */
+
+.card {
+  /* Base Layout */
+  display: flex;
+  flex-direction: column;
+  
+  /* Spacing */
+  padding: var(--spacing-6);
+  
+  /* Border */
+  border: var(--border-default);
+  border-radius: var(--radius-lg);
+  
+  /* Background */
+  background-color: var(--color-background);
+  
+  /* Elevation */
+  box-shadow: var(--shadow-sm);
+  
+  /* Transitions */
+  transition: var(--transition-base);
+  
+  /* Height */
+  height: 100%;
+}
+
+/* Hover Effect Variant */
+.cardHover {
+  cursor: pointer;
+}
+
+.cardHover:hover {
+  /* Enhanced elevation on hover */
+  box-shadow: var(--shadow-md);
+  
+  /* Subtle lift effect */
+  transform: translateY(-2px);
+  
+  /* Border color change */
+  border-color: var(--color-primary);
+}
+
+.cardHover:focus-visible {
+  /* Focus indicator for keyboard navigation */
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+  
+  /* Enhanced elevation */
+  box-shadow: var(--shadow-md);
+}
+
+.cardHover:active {
+  /* Pressed state */
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .card {
+    /* Reduce padding on mobile for better space utilization */
+    padding: var(--spacing-4);
+  }
+}
+
+/* Ensure smooth transitions for transform and box-shadow */
+.card,
+.cardHover {
+  transition: transform var(--duration-base) var(--ease-out),
+              box-shadow var(--duration-base) var(--ease-out),
+              border-color var(--duration-base) var(--ease-out);
+}

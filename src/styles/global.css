@@ -1,0 +1,612 @@
+/**
+ * Global Styles
+ * Portfolio Website
+ * 
+ * Includes:
+ * - CSS Reset
+ * - Base styles
+ * - Global layout rules
+ * - Accessibility utilities
+ */
+
+/* Import CSS Variables */
+@import './variables.css';
+
+/* ===== CSS RESET ===== */
+
+/* Modern CSS Reset by Andy Bell */
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html {
+  scroll-behavior: smooth;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: var(--line-height-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ===== BASE STYLES ===== */
+
+html {
+  font-size: 16px; /* Base font size */
+}
+
+body {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text-primary);
+  background-color: var(--color-background);
+  line-height: var(--line-height-normal);
+}
+
+/* ===== TYPOGRAPHY ===== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-4);
+}
+
+h1 {
+  font-size: var(--font-size-4xl);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+h2 {
+  font-size: var(--font-size-3xl);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+h3 {
+  font-size: var(--font-size-2xl);
+}
+
+h4 {
+  font-size: var(--font-size-xl);
+}
+
+h5 {
+  font-size: var(--font-size-lg);
+}
+
+h6 {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+}
+
+p {
+  margin-bottom: var(--spacing-4);
+  color: var(--color-text-secondary);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: var(--transition-colors);
+}
+
+a:hover {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}
+
+strong,
+b {
+  font-weight: var(--font-weight-bold);
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+small {
+  font-size: var(--font-size-sm);
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-sm);
+}
+
+/* ===== LISTS ===== */
+
+ul,
+ol {
+  margin-bottom: var(--spacing-4);
+  padding-left: var(--spacing-6);
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+li {
+  margin-bottom: var(--spacing-2);
+  color: var(--color-text-secondary);
+}
+
+/* ===== FOCUS STYLES (WCAG AA Compliance) ===== */
+
+/* Visible focus indicators for keyboard navigation */
+*:focus {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* Use :focus-visible to only show outline for keyboard focus */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ===== BUTTONS ===== */
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: var(--opacity-50);
+}
+
+/* ===== FORMS ===== */
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: var(--spacing-3) var(--spacing-4);
+  border: var(--border-default);
+  border-radius: var(--radius-md);
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  transition: var(--transition-colors);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+}
+
+input:disabled,
+textarea:disabled,
+select:disabled {
+  background-color: var(--color-background-secondary);
+  cursor: not-allowed;
+  opacity: var(--opacity-60);
+}
+
+label {
+  display: block;
+  margin-bottom: var(--spacing-2);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+}
+
+/* ===== TABLES ===== */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--spacing-6);
+}
+
+th,
+td {
+  padding: var(--spacing-3) var(--spacing-4);
+  text-align: left;
+  border-bottom: var(--border-default);
+}
+
+th {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  background-color: var(--color-background-secondary);
+}
+
+td {
+  color: var(--color-text-secondary);
+}
+
+/* ===== GLOBAL LAYOUT RULES ===== */
+
+/* Main container */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main content area */
+main {
+  flex: 1;
+  width: 100%;
+}
+
+/* Container utility classes */
+.container {
+  width: 100%;
+  max-width: var(--container-2xl);
+  margin: 0 auto;
+  padding: 0 var(--spacing-4);
+}
+
+.container-sm {
+  max-width: var(--container-sm);
+}
+
+.container-md {
+  max-width: var(--container-md);
+}
+
+.container-lg {
+  max-width: var(--container-lg);
+}
+
+.container-xl {
+  max-width: var(--container-xl);
+}
+
+/* Section spacing */
+section {
+  padding: var(--spacing-12) 0;
+}
+
+/* ===== ACCESSIBILITY UTILITIES ===== */
+
+/* Skip to main content link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  padding: var(--spacing-2) var(--spacing-4);
+  text-decoration: none;
+  font-weight: var(--font-weight-semibold);
+  border-radius: 0 0 var(--radius-md) 0;
+  z-index: var(--z-index-tooltip);
+  transition: top var(--duration-fast) var(--ease-out);
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 2px solid var(--color-text-inverse);
+  outline-offset: 2px;
+}
+
+/* Screen reader only content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Screen reader only but focusable */
+.sr-only-focusable:focus,
+.sr-only-focusable:active {
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* ===== UTILITY CLASSES ===== */
+
+/* Display utilities */
+.hidden {
+  display: none !important;
+}
+
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.flex {
+  display: flex;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.grid {
+  display: grid;
+}
+
+/* Text alignment */
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* Text colors */
+.text-primary {
+  color: var(--color-text-primary);
+}
+
+.text-secondary {
+  color: var(--color-text-secondary);
+}
+
+.text-tertiary {
+  color: var(--color-text-tertiary);
+}
+
+/* Font weights */
+.font-light {
+  font-weight: var(--font-weight-light);
+}
+
+.font-normal {
+  font-weight: var(--font-weight-normal);
+}
+
+.font-medium {
+  font-weight: var(--font-weight-medium);
+}
+
+.font-semibold {
+  font-weight: var(--font-weight-semibold);
+}
+
+.font-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+/* Spacing utilities */
+.mt-0 { margin-top: 0; }
+.mt-2 { margin-top: var(--spacing-2); }
+.mt-4 { margin-top: var(--spacing-4); }
+.mt-6 { margin-top: var(--spacing-6); }
+.mt-8 { margin-top: var(--spacing-8); }
+
+.mb-0 { margin-bottom: 0; }
+.mb-2 { margin-bottom: var(--spacing-2); }
+.mb-4 { margin-bottom: var(--spacing-4); }
+.mb-6 { margin-bottom: var(--spacing-6); }
+.mb-8 { margin-bottom: var(--spacing-8); }
+
+/* ===== LOADING STATES ===== */
+
+.loading {
+  opacity: var(--opacity-50);
+  pointer-events: none;
+}
+
+/* Loading spinner */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid var(--color-border);
+  border-top-color: var(--color-primary);
+  border-radius: var(--radius-full);
+  animation: spin 0.6s linear infinite;
+}
+
+/* ===== IMAGE LOADING ===== */
+
+img.loading {
+  opacity: 0;
+  transition: var(--transition-opacity);
+}
+
+img.loaded {
+  opacity: 1;
+}
+
+/* Lazy image placeholder */
+.lazy-image-placeholder {
+  background-color: var(--color-background-secondary);
+  background-image: linear-gradient(
+    90deg,
+    var(--color-background-secondary) 0%,
+    var(--color-background-tertiary) 50%,
+    var(--color-background-secondary) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* ===== PRINT STYLES ===== */
+
+@media print {
+  /* Remove shadows and background colors for better printing */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  /* Show URLs after links */
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  /* Don't show URLs for internal links */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  /* Page breaks */
+  h1,
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Hide non-essential elements */
+  nav,
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* ===== SMOOTH SCROLLING ===== */
+
+html {
+  scroll-padding-top: var(--spacing-8); /* Offset for fixed headers */
+}
+
+/* ===== SELECTION STYLES ===== */
+
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+
+::-moz-selection {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+}

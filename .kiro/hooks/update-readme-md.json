@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "protect Secrets",
+      "trigger": "Stop",
+      "action": {
+        "type": "agent",
+        "prompt": "Make sure no senstive data is found outside .env file"
+      },
+      "description": "Make sure no senstive data is found outside .env file",
+      "enabled": false
+    }
+  ]
+}

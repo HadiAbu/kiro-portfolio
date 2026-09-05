@@ -1,0 +1,13 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Typecheck when the agent finishes",
+      "trigger": "AgentStop",
+      "action": {
+        "type": "command",
+        "command": "npx tsc --noEmit --pretty false"
+      }
+    }
+  ]
+}

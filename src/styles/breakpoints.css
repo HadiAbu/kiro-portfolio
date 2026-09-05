@@ -1,0 +1,492 @@
+/**
+ * Media Query Breakpoints
+ * Portfolio Website
+ * 
+ * Provides reusable media query mixins and utilities
+ * for responsive design implementation
+ * 
+ * Breakpoint Strategy:
+ * - Mobile-first approach (min-width)
+ * - xs: 320px - Small phones
+ * - sm: 480px - Large phones
+ * - md: 768px - Tablets (3-column layout trigger)
+ * - lg: 1024px - Small laptops
+ * - xl: 1280px - Desktops
+ * - 2xl: 1440px - Large desktops
+ */
+
+/* ===== BREAKPOINT VARIABLES ===== */
+
+/* These are defined in variables.css but repeated here for reference */
+/* 
+  --breakpoint-xs: 320px;
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1440px;
+*/
+
+/* ===== MEDIA QUERY UTILITIES ===== */
+
+/* 
+  Note: CSS doesn't support true mixins like Sass/Less.
+  These are example media queries that can be copy-pasted
+  or used as a reference for responsive styles.
+  
+  For actual use, apply these patterns directly in your component CSS modules.
+*/
+
+/* ===== MOBILE FIRST (MIN-WIDTH) ===== */
+
+/* Extra Small devices (portrait phones, 320px and up) */
+@media (min-width: 320px) {
+  .responsive-xs {
+    /* Styles for xs and up */
+  }
+}
+
+/* Small devices (landscape phones, 480px and up) */
+@media (min-width: 480px) {
+  .responsive-sm {
+    /* Styles for sm and up */
+  }
+}
+
+/* Medium devices (tablets, 768px and up) - MAIN LAYOUT BREAKPOINT */
+@media (min-width: 768px) {
+  .responsive-md {
+    /* Styles for md and up */
+    /* This is where 3-column layout activates */
+  }
+}
+
+/* Large devices (desktops, 1024px and up) */
+@media (min-width: 1024px) {
+  .responsive-lg {
+    /* Styles for lg and up */
+  }
+}
+
+/* Extra Large devices (large desktops, 1280px and up) */
+@media (min-width: 1280px) {
+  .responsive-xl {
+    /* Styles for xl and up */
+  }
+}
+
+/* 2X Large devices (extra large desktops, 1440px and up) */
+@media (min-width: 1440px) {
+  .responsive-2xl {
+    /* Styles for 2xl and up */
+  }
+}
+
+/* ===== DESKTOP FIRST (MAX-WIDTH) ===== */
+
+/* For cases where you need to target smaller screens */
+
+/* Below 2xl */
+@media (max-width: 1439px) {
+  .responsive-below-2xl {
+    /* Styles for below 2xl */
+  }
+}
+
+/* Below xl */
+@media (max-width: 1279px) {
+  .responsive-below-xl {
+    /* Styles for below xl */
+  }
+}
+
+/* Below lg */
+@media (max-width: 1023px) {
+  .responsive-below-lg {
+    /* Styles for below lg */
+  }
+}
+
+/* Below md (mobile layout) */
+@media (max-width: 767px) {
+  .responsive-below-md {
+    /* Styles for mobile layout */
+    /* This is where single-column layout activates */
+  }
+}
+
+/* Below sm */
+@media (max-width: 479px) {
+  .responsive-below-sm {
+    /* Styles for small phones */
+  }
+}
+
+/* ===== RANGE QUERIES ===== */
+
+/* Only tablets (768px to 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .responsive-tablet-only {
+    /* Styles for tablets only */
+  }
+}
+
+/* Only mobile (below 768px) */
+@media (max-width: 767px) {
+  .responsive-mobile-only {
+    /* Styles for mobile only */
+  }
+}
+
+/* Only desktop (1024px and up) */
+@media (min-width: 1024px) {
+  .responsive-desktop-only {
+    /* Styles for desktop only */
+  }
+}
+
+/* ===== ORIENTATION QUERIES ===== */
+
+@media (orientation: portrait) {
+  .responsive-portrait {
+    /* Styles for portrait orientation */
+  }
+}
+
+@media (orientation: landscape) {
+  .responsive-landscape {
+    /* Styles for landscape orientation */
+  }
+}
+
+/* ===== RESPONSIVE VISIBILITY UTILITIES ===== */
+
+/* Hide on mobile */
+@media (max-width: 767px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+}
+
+/* Hide on tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hide-on-tablet {
+    display: none !important;
+  }
+}
+
+/* Hide on desktop */
+@media (min-width: 1024px) {
+  .hide-on-desktop {
+    display: none !important;
+  }
+}
+
+/* Show only on mobile */
+@media (min-width: 768px) {
+  .show-on-mobile-only {
+    display: none !important;
+  }
+}
+
+/* Show only on tablet */
+.show-on-tablet-only {
+  display: none !important;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .show-on-tablet-only {
+    display: block !important;
+  }
+}
+
+/* Show only on desktop */
+@media (max-width: 1023px) {
+  .show-on-desktop-only {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .show-on-desktop-only {
+    display: block !important;
+  }
+}
+
+/* ===== RESPONSIVE CONTAINER UTILITIES ===== */
+
+/* Responsive padding */
+.container-responsive {
+  padding-left: var(--spacing-4);
+  padding-right: var(--spacing-4);
+}
+
+@media (min-width: 768px) {
+  .container-responsive {
+    padding-left: var(--spacing-6);
+    padding-right: var(--spacing-6);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-responsive {
+    padding-left: var(--spacing-8);
+    padding-right: var(--spacing-8);
+  }
+}
+
+/* ===== RESPONSIVE GRID UTILITIES ===== */
+
+/* Grid columns - Mobile first */
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+@media (min-width: 480px) {
+  .grid-cols-sm-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .grid-cols-md-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .grid-cols-md-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-cols-lg-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .grid-cols-lg-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* ===== RESPONSIVE SPACING ===== */
+
+/* Responsive section padding */
+.section-padding {
+  padding-top: var(--spacing-8);
+  padding-bottom: var(--spacing-8);
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: var(--spacing-12);
+    padding-bottom: var(--spacing-12);
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-top: var(--spacing-16);
+    padding-bottom: var(--spacing-16);
+  }
+}
+
+/* Responsive gap utilities */
+.gap-responsive {
+  gap: var(--spacing-4);
+}
+
+@media (min-width: 768px) {
+  .gap-responsive {
+    gap: var(--spacing-6);
+  }
+}
+
+@media (min-width: 1024px) {
+  .gap-responsive {
+    gap: var(--spacing-8);
+  }
+}
+
+/* ===== RESPONSIVE TYPOGRAPHY ===== */
+
+/* Responsive heading sizes */
+.heading-responsive {
+  font-size: var(--font-size-2xl);
+}
+
+@media (min-width: 768px) {
+  .heading-responsive {
+    font-size: var(--font-size-3xl);
+  }
+}
+
+@media (min-width: 1024px) {
+  .heading-responsive {
+    font-size: var(--font-size-4xl);
+  }
+}
+
+/* ===== DASHBOARD LAYOUT BREAKPOINTS ===== */
+
+/* 
+  Main layout transformation at 768px:
+  - Below 768px: Single column (mobile)
+  - Above 768px: 3-column grid (desktop)
+*/
+
+.dashboard-layout {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .dashboard-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr 80px;
+    grid-template-areas: "sidebar main navigation";
+    gap: var(--spacing-6);
+    max-width: var(--container-2xl);
+    margin: 0 auto;
+  }
+}
+
+/* ===== SERVICES GRID BREAKPOINTS ===== */
+
+/* 
+  Services grid transformation:
+  - Below 768px: 1 column
+  - Above 768px: 3 columns
+*/
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-6);
+}
+
+@media (min-width: 768px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ===== PROJECTS GRID BREAKPOINTS ===== */
+
+/* 
+  Projects grid transformation:
+  - Below 768px: 1 column
+  - 768px to 1023px: 2 columns
+  - Above 1024px: 3 columns
+*/
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-6);
+}
+
+@media (min-width: 768px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ===== NAVIGATION BREAKPOINTS ===== */
+
+/* 
+  Icon navigation transformation:
+  - Below 768px: Horizontal sticky bar or hamburger menu
+  - Above 768px: Vertical sidebar (right column)
+*/
+
+.icon-navigation {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: var(--color-background);
+  border-top: var(--border-default);
+  padding: var(--spacing-2);
+  z-index: var(--z-index-sticky);
+}
+
+@media (min-width: 768px) {
+  .icon-navigation {
+    position: sticky;
+    top: var(--spacing-6);
+    flex-direction: column;
+    border-top: none;
+    border-left: var(--border-default);
+    padding: var(--spacing-4);
+  }
+}
+
+/* ===== HIGH RESOLUTION DISPLAYS ===== */
+
+/* Retina displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .retina-optimized {
+    /* Styles for high DPI displays */
+    /* Use higher quality images */
+  }
+}
+
+/* ===== TOUCH DEVICE DETECTION ===== */
+
+/* Hover-capable devices */
+@media (hover: hover) and (pointer: fine) {
+  .hover-effect:hover {
+    /* Hover effects for mouse users */
+  }
+}
+
+/* Touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .touch-target {
+    /* Ensure touch targets are at least 44x44px */
+    min-width: var(--touch-target-min);
+    min-height: var(--touch-target-min);
+  }
+}
+
+/* ===== DARK MODE PREPARATION ===== */
+
+/* 
+  Placeholder for future dark mode implementation
+  Currently not in scope for v1
+*/
+
+@media (prefers-color-scheme: dark) {
+  .dark-mode-ready {
+    /* Dark mode styles would go here */
+  }
+}
+
+/* ===== PRINT MEDIA QUERIES ===== */
+
+@media print {
+  /* Hide navigation elements */
+  .icon-navigation,
+  .hide-on-print {
+    display: none !important;
+  }
+
+  /* Optimize for printing */
+  body {
+    font-size: 12pt;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+}

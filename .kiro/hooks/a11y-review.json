@@ -1,0 +1,14 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Accessibility review on component save",
+      "trigger": "FileSave",
+      "matcher": "src/components/.*\\.tsx$",
+      "action": {
+        "type": "agent",
+        "prompt": "A component file was just saved. Review ONLY that file for accessibility: (1) every <section> has aria-labelledby pointing to its heading, (2) heading order is h1 → h2 → h3 with no skips, (3) every <img> has a descriptive alt, (4) every interactive element is a <a> or <button> (no clickable <div>), (5) external links have rel=\"noreferrer\". Report a short ✅/❌ list. Fix ❌ items directly if the fix is unambiguous."
+      }
+    }
+  ]
+}

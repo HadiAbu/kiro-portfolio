@@ -1,0 +1,26 @@
+.group {
+  margin-bottom: var(--spacing-6);
+}
+
+.category {
+  margin: 0 0 var(--spacing-3);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+  padding: 0;
+  list-style: none;
+}
+
+.tag {
+  padding: var(--spacing-1) var(--spacing-3);
+  background-color: var(--color-background-secondary);
+  border: var(--border-default);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}

@@ -1,0 +1,13 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Verify a spec task before ticking it",
+      "trigger": "PostTaskExecution",
+      "action": {
+        "type": "agent",
+        "prompt": "A spec task just finished. Before marking it complete: (1) re-read the acceptance criteria it references in requirements.md, (2) list each criterion with ✅/❌ and the file/line that satisfies it, (3) run npm run lint. If anything is ❌ or lint fails, fix it now and re-check."
+      }
+    }
+  ]
+}

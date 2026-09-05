@@ -1,0 +1,31 @@
+.lazyImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.lazyImage.loading {
+  opacity: 0.5;
+  background-color: var(--color-background-secondary, #f5f5f5);
+}
+
+.lazyImage.loaded {
+  opacity: 1;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.lazyImage.error {
+  opacity: 0.3;
+  background-color: var(--color-background-secondary, #f5f5f5);
+  border: 1px solid var(--color-border, #e0e0e0);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

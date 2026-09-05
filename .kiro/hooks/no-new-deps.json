@@ -1,0 +1,14 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Ask before adding dependencies",
+      "trigger": "PreToolUse",
+      "matcher": "shell",
+      "action": {
+        "type": "agent",
+        "prompt": "GUARDRAIL: If the shell command you are about to run installs a package (npm install <pkg>, npm i, pnpm add, yarn add, npx <new tool>), STOP and ask the user for explicit approval first, naming the package, its size and why it is needed. Prefer a solution with the existing dependencies. Otherwise continue."
+      }
+    }
+  ]
+}

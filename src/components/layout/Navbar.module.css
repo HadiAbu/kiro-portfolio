@@ -1,0 +1,140 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-index-fixed);
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  background-color: var(--color-background);
+  border-bottom: var(--border-default);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: var(--container-2xl);
+  margin: 0 auto;
+  padding: 0 var(--spacing-4);
+  gap: var(--spacing-4);
+}
+
+.logo {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-lg);
+  color: var(--color-text-primary);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.logo:hover {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+/* Desktop nav links */
+.links {
+  display: none;
+  align-items: center;
+  gap: var(--spacing-6);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.link {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  transition: var(--transition-colors);
+}
+
+.link:hover {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.linkActive {
+  color: var(--color-primary);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+/* Hamburger button */
+.hamburger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--touch-target-min);
+  height: var(--touch-target-min);
+  color: var(--color-text-primary);
+  border-radius: var(--radius-md);
+}
+
+.hamburger:hover {
+  background-color: var(--color-hover);
+}
+
+.hamburgerIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* Mobile drawer */
+.drawer {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-index-modal);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-6);
+  background-color: var(--color-background);
+  list-style: none;
+  margin: 0;
+  padding: var(--spacing-8);
+}
+
+.drawerLink {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+.drawerLink:hover,
+.drawerLinkActive {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.drawerClose {
+  position: absolute;
+  top: var(--spacing-4);
+  right: var(--spacing-4);
+  width: var(--touch-target-min);
+  height: var(--touch-target-min);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-primary);
+  border-radius: var(--radius-md);
+}
+
+@media (min-width: 768px) {
+  .links {
+    display: flex;
+  }
+
+  .hamburger {
+    display: none;
+  }
+}

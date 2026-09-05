@@ -1,0 +1,31 @@
+.card {
+  padding: var(--spacing-5);
+  background-color: var(--color-background-secondary);
+  border: var(--border-default);
+  border-radius: var(--radius-lg);
+}
+
+.name {
+  margin: 0 0 var(--spacing-1);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+}
+
+.issuer {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.date {
+  margin: var(--spacing-1) 0 0;
+  color: var(--color-text-tertiary);
+  font-size: var(--font-size-sm);
+}
+
+.link {
+  display: inline-block;
+  margin-top: var(--spacing-3);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+}
