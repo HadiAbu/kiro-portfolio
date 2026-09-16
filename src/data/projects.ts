@@ -5,7 +5,7 @@ export const projects: Project[] = [
     id: 'ai-philosophy',
     name: 'AI Philosophy',
     description:
-      'A visual, interactive site that teaches how AI works — 13 modules from neural networks to RAG, with live in-browser simulations. Built with React 19, FastAPI, and a full production stack (Docker, AWS EC2, CI/CD).',
+      'An interactive explainer for how modern AI works — 13 modules from neural networks to RAG, each with a live in-browser simulation. Built on React 19 and FastAPI and shipped on a full production stack (Docker, AWS EC2, CI/CD).',
     thumbnail: '/images/projects/ai-philosophy.png',
     technologies: ['React', 'TypeScript', 'FastAPI', 'TensorFlow.js', 'Docker', 'AWS'],
     demoUrl: 'https://hadi-portfolio.vercel.app/',
@@ -17,7 +17,7 @@ export const projects: Project[] = [
     id: 'manga-scrapper',
     name: 'Manga Search',
     description:
-      'A full-stack manga discovery and reading app. Scrapes metadata from the Jikan API into OpenSearch for fast full-text search, served by a FastAPI backend behind Keycloak OIDC auth and an Nginx load balancer — with an in-app reader that proxies MangaDex with a Comick fallback.',
+      'A search and reading platform designed for scale — Jikan metadata indexed into OpenSearch for fast full-text queries, a FastAPI service behind Keycloak OIDC and an Nginx load balancer, and a reader that proxies MangaDex with a Comick fallback.',
     thumbnail: '/images/projects/manga-scrapper.png',
     technologies: ['FastAPI', 'OpenSearch', 'Keycloak', 'Nginx', 'Docker', 'Python'],
     repositoryUrl: 'https://github.com/HadiAbu/Manga-Scrapper',
@@ -28,7 +28,7 @@ export const projects: Project[] = [
     id: 'issue-tracker-rabbitmq',
     name: 'Issue Tracker',
     description:
-      'A Linear-lite issue tracker with a FastAPI + Postgres backend and a React + Vite frontend, containerised with Docker Compose. Includes JWT auth, project/issue boards, dashboards with charts, and per-project stats.',
+      'A Linear-lite issue tracker built as a distributed system — FastAPI and Postgres behind a React + Vite client, RabbitMQ for async events, and Docker Compose tying it together. JWT auth, project and issue boards, dashboards with charts, and per-project stats.',
     thumbnail: '/images/projects/issue-tracker.jpg',
     technologies: ['FastAPI', 'PostgreSQL', 'React', 'RabbitMQ', 'Docker'],
     repositoryUrl: 'https://github.com/HadiAbu/issue-tracker-rabbitmq',
@@ -50,7 +50,7 @@ export const projects: Project[] = [
     id: 'n8n-automations',
     name: 'n8n Automation Workflows',
     description:
-      'A curated collection of reusable n8n workflows for integrations, data pipelines, AI agents, and business process automation.',
+      'A library of reusable n8n workflows for agentic automation — AI agents, data pipelines, service integrations, and business process automation.',
     thumbnail: '/images/projects/n8n-automations.png',
     technologies: ['n8n', 'Automation', 'AI Agents', 'JSON'],
     repositoryUrl: 'https://github.com/HadiAbu/n8n-automations',

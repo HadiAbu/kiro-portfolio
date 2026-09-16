@@ -2,26 +2,26 @@ import type { Service } from '@types'
 
 export const services: Service[] = [
   {
-    id: 'fullstack-development',
-    title: 'Fullstack Development',
+    id: 'ai-systems',
+    title: 'AI-Powered Systems',
     description:
-      'End-to-end web applications built with React, TypeScript, and Python — from responsive UIs to REST APIs and microservices.',
-    icon: 'code',
-    category: 'development',
-  },
-  {
-    id: 'ai-agentic-workflows',
-    title: 'AI & Agentic Workflows',
-    description:
-      'Production-grade RAG pipelines, AI agent systems, and automation workflows using n8n, Pinecone, FastAPI, and MCP.',
+      'Production RAG pipelines, agent systems, and LLM-backed services — designed, evaluated, and deployed with FastAPI, Pinecone, and MCP.',
     icon: 'cpu',
     category: 'development',
   },
   {
-    id: 'cloud-infrastructure',
-    title: 'Cloud Infrastructure',
+    id: 'agentic-dev-tooling',
+    title: 'Agentic Workflows & Dev Tooling',
     description:
-      'Scalable cloud architecture on AWS and Azure, containerised with Docker and delivered through CI/CD pipelines.',
+      'Autonomous agent workflows and internal developer tools — n8n and Redis event pipelines, model evaluation harnesses, and coding-agent integrations with Claude Code and Cursor.',
+    icon: 'code',
+    category: 'development',
+  },
+  {
+    id: 'system-design',
+    title: 'System Design & Architecture',
+    description:
+      'End-to-end architecture for services that scale — microservices, async event flows, auth, search, and load balancing, containerised and shipped through CI/CD.',
     icon: 'cloud',
     category: 'development',
   },
@@ -29,7 +29,7 @@ export const services: Service[] = [
     id: 'technical-consulting',
     title: 'Technical Consulting',
     description:
-      'Translating ambiguous business requirements into clear technical specifications, architecture decisions, and delivery roadmaps.',
+      'Translating ambiguous requirements into clear technical specifications, architecture decisions, and delivery roadmaps.',
     icon: 'lightbulb',
     category: 'development',
   },

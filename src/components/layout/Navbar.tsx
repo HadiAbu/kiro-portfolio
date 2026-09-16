@@ -80,6 +80,9 @@ const Navbar: React.FC = () => {
         </ul>
 
         <div className={styles.actions}>
+          <NavLink to="/contact" className={styles.cta}>
+            Get in touch
+          </NavLink>
           <ThemeToggle />
           <button
             ref={hamburgerRef}
@@ -146,6 +149,12 @@ const Navbar: React.FC = () => {
               </NavLink>
             </li>
           ))}
+
+          <li>
+            <NavLink to="/contact" onClick={closeMenu} className={styles.drawerCta}>
+              Get in touch
+            </NavLink>
+          </li>
         </ul>
       )}
     </header>

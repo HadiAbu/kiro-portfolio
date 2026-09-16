@@ -52,6 +52,11 @@
   box-shadow: 0 0 0 4px var(--color-hover);
 }
 
+/* Hover lift - shared across variants */
+.button:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
 /* Active state - subtle press effect */
 .button:active:not(:disabled) {
   transform: translateY(1px);

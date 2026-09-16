@@ -10,34 +10,34 @@
 :root {
   /* ===== COLOR PALETTE ===== */
   
-  /* Primary Colors — brand yellow (from profile image #ffd11a) */
-  /* Text/link shade is darkened for WCAG AA contrast on white (~4.6:1). */
-  --color-primary: #8a6d00; /* readable gold for text/links/borders on light bg */
-  --color-primary-dark: #6b5500; /* hover/active text shade */
-  --color-primary-light: #b08f00;
-  --color-primary-surface: #ffd11a; /* vivid brand yellow for button/badge fills */
-  --color-primary-surface-hover: #f0c000;
-  --color-on-primary: #1a1a1a; /* dark text that sits on the yellow surface */
-  --color-secondary: #ff6b6b;
-  --color-secondary-dark: #ff5252;
-  --color-secondary-light: #ff8787;
-  
-  /* Neutral Colors */
-  --color-text-primary: #1a1a1a; /* Contrast ratio: 16.1:1 on white */
-  --color-text-secondary: #4a4a4a; /* Contrast ratio: 10.2:1 on white */
-  --color-text-tertiary: #6b6b6b; /* Contrast ratio: 6.5:1 on white */
-  --color-text-inverse: #ffffff;
-  
-  /* Background Colors */
-  --color-background: #ffffff;
-  --color-background-secondary: #f5f5f5;
-  --color-background-tertiary: #e8e8e8;
-  --color-background-dark: #2a2a2a;
-  
-  /* Border Colors */
-  --color-border: #e0e0e0;
-  --color-border-light: #f0f0f0;
-  --color-border-dark: #d0d0d0;
+  /* Primary Colors — Editorial rust / burnt sienna */
+  /* Text/link shade meets WCAG AA on warm paper (#faf7f2, ~4.7:1). */
+  --color-primary: #a5471a; /* readable rust for text/links/borders on paper */
+  --color-primary-dark: #8f3f16; /* hover/active text shade */
+  --color-primary-light: #c56b3d;
+  --color-primary-surface: #b4531f; /* rust fill for buttons/badges */
+  --color-primary-surface-hover: #9c4419;
+  --color-on-primary: #faf7f2; /* paper text that sits on the rust surface */
+  --color-secondary: #4b7f52;
+  --color-secondary-dark: #3d6a43;
+  --color-secondary-light: #6a9a70;
+
+  /* Neutral Colors — warm ink */
+  --color-text-primary: #26221d; /* ~15:1 on warm paper */
+  --color-text-secondary: #5c554b; /* ~8:1 on warm paper */
+  --color-text-tertiary: #8a8175; /* ~4.6:1 on warm paper */
+  --color-text-inverse: #faf7f2;
+
+  /* Background Colors — warm paper */
+  --color-background: #faf7f2;
+  --color-background-secondary: #f3ede3;
+  --color-background-tertiary: #e9e0d1;
+  --color-background-dark: #26221d;
+
+  /* Border Colors — warm */
+  --color-border: #e0d8ca;
+  --color-border-light: #ece5d8;
+  --color-border-dark: #d0c6b4;
   
   /* Semantic Colors */
   --color-success: #28a745;
@@ -50,16 +50,15 @@
   --color-info-light: #d1ecf1;
   
   /* Focus/Hover States */
-  --color-focus: #8a6d00;
-  --color-hover: rgba(138, 109, 0, 0.1);
+  --color-focus: #a5471a;
+  --color-hover: rgba(165, 71, 26, 0.1);
   
   /* ===== TYPOGRAPHY ===== */
   
-  /* Font Families */
-  --font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 
+  /* Font Families — Editorial: Spectral display serif + Public Sans body */
+  --font-family-primary: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
                           Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-  --font-family-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 
-                          Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  --font-family-heading: 'Spectral', Georgia, 'Times New Roman', 'Iowan Old Style', serif;
   --font-family-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
   
   /* Font Sizes */
@@ -127,13 +126,13 @@
   --spacing-3xl: var(--spacing-16);
 
   /* Responsive section rhythm (fluid, scales with viewport) */
-  --section-gap-y: clamp(2.5rem, 6vw, 6rem);
+  --section-gap-y: clamp(3rem, 6vw, 5.5rem);
   --section-gap-y-sm: clamp(1.5rem, 4vw, 3rem);
-  --content-gap: clamp(1.5rem, 4vw, 3rem);
+  --content-gap: clamp(1.75rem, 4vw, 2.75rem);
   --element-gap: clamp(1rem, 2.5vw, 1.5rem);
 
   /* Global horizontal gutter — content never touches the screen edge */
-  --container-gutter: clamp(1rem, 4vw, 2.5rem);
+  --container-gutter: clamp(1.25rem, 4vw, 2.5rem);
   
   /* ===== SIZING ===== */
   
@@ -143,6 +142,9 @@
   --container-lg: 1024px;
   --container-xl: 1280px;
   --container-2xl: 1400px;
+
+  /* Editorial content column — the single measure every section aligns to */
+  --content-max: 1160px;
   
   /* Sidebar & Navigation Widths */
   --sidebar-width: 300px;
@@ -166,26 +168,28 @@
   
   /* ===== BORDER RADIUS ===== */
   
+  /* Editorial: near-square corners throughout */
   --radius-none: 0;
-  --radius-sm: 0.25rem;   /* 4px */
-  --radius-base: 0.375rem; /* 6px */
-  --radius-md: 0.5rem;    /* 8px */
-  --radius-lg: 0.75rem;   /* 12px */
-  --radius-xl: 1rem;      /* 16px */
-  --radius-2xl: 1.5rem;   /* 24px */
+  --radius-sm: 2px;
+  --radius-base: 2px;
+  --radius-md: 3px;
+  --radius-lg: 4px;
+  --radius-xl: 6px;
+  --radius-2xl: 8px;
   --radius-full: 9999px;
   --radius-circle: 50%;
   
   /* ===== SHADOWS ===== */
   
-  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
-  --shadow-base: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+  /* Editorial: low, warm-toned shadows — restraint over elevation */
+  --shadow-xs: 0 1px 2px 0 rgba(38, 34, 29, 0.04);
+  --shadow-sm: 0 1px 2px 0 rgba(38, 34, 29, 0.05);
+  --shadow-base: 0 1px 3px 0 rgba(38, 34, 29, 0.06);
+  --shadow-md: 0 4px 12px -4px rgba(38, 34, 29, 0.1);
+  --shadow-lg: 0 10px 24px -8px rgba(38, 34, 29, 0.12);
+  --shadow-xl: 0 18px 36px -12px rgba(38, 34, 29, 0.14);
+  --shadow-2xl: 0 24px 48px -16px rgba(38, 34, 29, 0.18);
+  --shadow-inner: inset 0 2px 4px 0 rgba(38, 34, 29, 0.05);
   
   /* ===== Z-INDEX SCALE ===== */
   
@@ -256,22 +260,24 @@
 /* ===== DARK MODE TOKENS ===== */
 
 [data-theme='dark'] {
-  --color-background: #0f0f0f;
-  --color-background-secondary: #1a1a1a;
-  --color-background-tertiary: #252525;
-  --color-text-primary: #f0f0f0;
-  --color-text-secondary: #b0b0b0;
-  --color-text-tertiary: #808080;
-  --color-text-inverse: #0f0f0f;
-  --color-border: #2e2e2e;
-  --color-border-light: #222222;
-  --color-border-dark: #3a3a3a;
-  --color-primary: #ffd11a; /* bright gold reads well on dark bg */
-  --color-primary-dark: #e6bc00;
-  --color-primary-light: #ffdd4d;
-  --color-primary-surface: #ffd11a;
-  --color-primary-surface-hover: #ffdd4d;
-  --color-on-primary: #1a1a1a;
-  --color-focus: #ffd11a;
-  --color-hover: rgba(255, 209, 26, 0.14);
+  /* Warm-dark Editorial — roasted paper, not neutral black */
+  --color-background: #1c1a17;
+  --color-background-secondary: #242119;
+  --color-background-tertiary: #2d2a22;
+  --color-background-dark: #100f0d;
+  --color-text-primary: #f2ede4;
+  --color-text-secondary: #b8b0a2;
+  --color-text-tertiary: #8a8175;
+  --color-text-inverse: #1c1a17;
+  --color-border: #37332c;
+  --color-border-light: #2b2822;
+  --color-border-dark: #4a4438;
+  --color-primary: #e08a4f; /* lifted rust for contrast on warm-dark */
+  --color-primary-dark: #cf7a3f;
+  --color-primary-light: #eaa06e;
+  --color-primary-surface: #b4531f;
+  --color-primary-surface-hover: #c9622a;
+  --color-on-primary: #faf7f2;
+  --color-focus: #e08a4f;
+  --color-hover: rgba(224, 138, 79, 0.14);
 }

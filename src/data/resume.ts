@@ -4,7 +4,7 @@ export const resume: Resume = {
   experience: [
     {
       company: 'AI Simple Flow',
-      position: 'Fullstack & AI Engineer',
+      position: 'AI Systems Engineer',
       startDate: '2023-01-01',
       endDate: 'Present',
       location: 'Remote',
@@ -88,29 +88,38 @@ export const resume: Resume = {
   ],
   skills: [
     {
-      category: 'Frontend & UI',
-      skills: ['React', 'Next.js', 'TypeScript', 'CSS Modules', 'Jest', 'React Testing Library'],
-    },
-    {
-      category: 'Backend & APIs',
-      skills: ['Python', 'FastAPI', 'Node.js', 'REST APIs', 'Microservices', 'Redis'],
-    },
-    {
       category: 'AI & Agentic',
       skills: [
+        'Claude',
+        'SDD',
+        'Agentic Workflows',
         'RAG Pipelines',
         'MCP',
-        'Agentic Workflows',
+        'LLM Evaluation',
         'Pinecone',
-        'Claude',
-        'Codex',
-        'Cursor',
         'n8n',
+      ],
+    },
+    {
+      category: 'System Design & Backend',
+      skills: [
+        'System Design',
+        'Python',
+        'FastAPI',
+        'PostgreSQL',
+        'MongoDB',
+        'REST APIs',
+        'Microservices',
+        'Redis',
       ],
     },
     {
       category: 'Cloud & DevOps',
       skills: ['AWS', 'Azure', 'Docker', 'CI/CD'],
+    },
+    {
+      category: 'Frontend & UI',
+      skills: ['React', 'Next.js', 'TypeScript', 'CSS Modules', 'Jest', 'React Testing Library'],
     },
   ],
   certifications: [],

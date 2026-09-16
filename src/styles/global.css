@@ -115,19 +115,19 @@ h4,
 h5,
 h6 {
   font-family: var(--font-family-heading);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-normal);
   line-height: var(--line-height-tight);
   color: var(--color-text-primary);
   margin-bottom: var(--spacing-4);
 }
 
 h1 {
-  font-size: var(--font-size-4xl);
+  font-size: var(--font-size-5xl);
   letter-spacing: var(--letter-spacing-tight);
 }
 
 h2 {
-  font-size: var(--font-size-3xl);
+  font-size: var(--font-size-4xl);
   letter-spacing: var(--letter-spacing-tight);
 }
 
@@ -321,7 +321,7 @@ main {
 /* Container utility classes */
 .container {
   width: 100%;
-  max-width: var(--container-2xl);
+  max-width: var(--content-max);
   margin: 0 auto;
   padding-inline: var(--container-gutter);
 }
@@ -504,6 +504,46 @@ section {
   border-radius: var(--radius-full);
   animation: spin 0.6s linear infinite;
 }
+
+/* ===== SCROLL / MOUNT REVEAL ===== */
+
+/* Single-element reveal: fade + rise. `--reveal-delay` lets a caller offset it. */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity var(--duration-slow) var(--ease-out),
+    transform var(--duration-slow) var(--ease-out);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal.isInView {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Group reveal: direct children fade + rise in a staggered sequence. */
+.revealGroup > * {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity var(--duration-slow) var(--ease-out),
+    transform var(--duration-slow) var(--ease-out);
+}
+
+.revealGroup.isInView > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.revealGroup.isInView > *:nth-child(1) { transition-delay: 0ms; }
+.revealGroup.isInView > *:nth-child(2) { transition-delay: 70ms; }
+.revealGroup.isInView > *:nth-child(3) { transition-delay: 140ms; }
+.revealGroup.isInView > *:nth-child(4) { transition-delay: 210ms; }
+.revealGroup.isInView > *:nth-child(5) { transition-delay: 280ms; }
+.revealGroup.isInView > *:nth-child(6) { transition-delay: 350ms; }
+.revealGroup.isInView > *:nth-child(7) { transition-delay: 420ms; }
+.revealGroup.isInView > *:nth-child(8) { transition-delay: 490ms; }
 
 /* ===== IMAGE LOADING ===== */
 

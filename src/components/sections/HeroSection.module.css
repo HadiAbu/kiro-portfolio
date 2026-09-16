@@ -1,67 +1,162 @@
 .hero {
-  padding-block: var(--section-gap-y);
+  padding-block: clamp(2.5rem, 5vw, 4.5rem);
 }
 
 .inner {
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-  gap: var(--content-gap);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 5vw, 3.25rem);
+  align-items: start;
 }
 
 .content {
-  flex: 1;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-5);
+}
+
+.eyebrow {
+  font-size: var(--font-size-xs);
+  letter-spacing: var(--letter-spacing-widest);
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+  font-weight: var(--font-weight-semibold);
+  font-family: var(--font-family-primary);
+  margin: 0;
 }
 
 .name {
-  margin-bottom: var(--spacing-2);
-}
-
-.title {
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-primary);
-  margin-bottom: var(--spacing-4);
+  margin: 0;
+  font-size: clamp(2.25rem, 6vw, 3.5rem);
+  line-height: 1.12;
+  font-weight: var(--font-weight-normal);
+  letter-spacing: var(--letter-spacing-tight);
+  text-wrap: balance;
 }
 
 .tagline {
   font-size: var(--font-size-lg);
   color: var(--color-text-secondary);
-  max-width: 48ch;
-  margin: 0 auto var(--spacing-6);
+  line-height: var(--line-height-relaxed);
+  max-width: 44ch;
+  margin: 0;
 }
 
-.imageWrapper {
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--spacing-4) var(--spacing-5);
+}
+
+.textLink {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  border-bottom: 1px solid var(--color-border-dark);
+  padding-bottom: 3px;
+  display: inline-block;
+  transition:
+    color var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out),
+    transform var(--duration-base) var(--ease-out);
+}
+
+.textLink:hover {
+  color: var(--color-primary);
+  text-decoration: none;
+  border-color: var(--color-primary);
+  transform: translateY(-1px);
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+  margin: 0;
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-circle);
+  background-color: var(--color-secondary);
   flex-shrink: 0;
 }
 
-.image {
-  width: 220px;
-  height: 220px;
-  border-radius: var(--radius-circle);
-  object-fit: cover;
-  border: var(--border-width-2) solid var(--color-border);
+.aside {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+  width: 100%;
+  max-width: 360px;
+  margin-inline: auto;
 }
 
-@media (min-width: 768px) {
+.imageFrame {
+  border: 1px solid var(--color-border);
+  background-color: var(--color-background-secondary);
+  padding: var(--spacing-3);
+  box-shadow: 10px 10px 0 0 var(--color-primary-surface);
+  transition: box-shadow var(--duration-medium) var(--ease-out);
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  filter: grayscale(0.15);
+}
+
+.caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-3);
+}
+
+.captionText {
+  font-family: var(--font-family-heading);
+  font-style: italic;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+}
+
+.socials {
+  display: flex;
+  gap: var(--spacing-4);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.socialLink {
+  color: var(--color-text-secondary);
+  display: inline-flex;
+}
+
+.socialLink:hover {
+  color: var(--color-primary);
+}
+
+.socialIcon {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+@media (min-width: 900px) {
   .inner {
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: left;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: clamp(2.5rem, 5vw, 4rem);
   }
 
-  .content {
-    text-align: left;
-  }
-
-  .tagline {
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .image {
-    width: 300px;
-    height: 300px;
+  .aside {
+    margin-inline: 0;
+    margin-left: auto;
+    max-width: 400px;
   }
 }
