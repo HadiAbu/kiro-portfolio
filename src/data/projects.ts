@@ -20,7 +20,7 @@ export const projects: Project[] = [
       'A personal "Jarvis" — a context-aware assistant centred on the owner\'s software projects and growth as an engineer. Spec-driven build with a chat agent, objectives/actions tracking, and a momentum dashboard, running FastAPI and Turso behind an Nginx-proxied React 19 frontend.',
     thumbnail: '/images/projects/hadi-os.png',
     technologies: ['React', 'FastAPI', 'Turso', 'TypeScript', 'Tailwind CSS', 'Docker'],
-    repositoryUrl: 'https://github.com/HadiAbu/Hadi-OS',
+    repositoryUrl: 'https://github.com/HadiAbu/hadi-os-showcase',
     featured: true,
     completionDate: '2026-09-08',
   },
