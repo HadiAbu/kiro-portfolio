@@ -14,6 +14,17 @@ export const projects: Project[] = [
     completionDate: '2026-07-05',
   },
   {
+    id: 'hadi-os',
+    name: 'Hadi-OS',
+    description:
+      'A personal "Jarvis" — a context-aware assistant centred on the owner\'s software projects and growth as an engineer. Spec-driven build with a chat agent, objectives/actions tracking, and a momentum dashboard, running FastAPI and Turso behind an Nginx-proxied React 19 frontend.',
+    thumbnail: '/images/projects/hadi-os.png',
+    technologies: ['React', 'FastAPI', 'Turso', 'TypeScript', 'Tailwind CSS', 'Docker'],
+    repositoryUrl: 'https://github.com/HadiAbu/Hadi-OS',
+    featured: true,
+    completionDate: '2026-09-08',
+  },
+  {
     id: 'manga-scrapper',
     name: 'Manga Search',
     description:
@@ -32,7 +43,7 @@ export const projects: Project[] = [
     thumbnail: '/images/projects/issue-tracker.jpg',
     technologies: ['FastAPI', 'PostgreSQL', 'React', 'RabbitMQ', 'Docker'],
     repositoryUrl: 'https://github.com/HadiAbu/issue-tracker-rabbitmq',
-    featured: true,
+    featured: false,
     completionDate: '2026-08-23',
   },
   {
