@@ -1,6 +1,6 @@
 import React from 'react'
-import { Helmet } from 'react-helmet-async'
 import { profile } from '@data'
+import { Seo } from '@components/common'
 import { SocialIcon } from '@components/layout'
 import styles from './ContactPage.module.css'
 
@@ -22,10 +22,11 @@ const ContactPage: React.FC = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Contact — {name}</title>
-        <meta name="description" content={`Get in touch with ${name}.`} />
-      </Helmet>
+      <Seo
+        title={`Contact — ${name}`}
+        description={`Get in touch with ${name}, ${profile.personalInfo.title}.`}
+        path="/contact"
+      />
 
       <section className={`container ${styles.page}`} aria-labelledby="contact-title">
         <h1 id="contact-title">Get in touch</h1>

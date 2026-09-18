@@ -1,8 +1,7 @@
 import React from 'react'
-import { Helmet } from 'react-helmet-async'
 import { profile, resume } from '@data'
 import { sortByDate, formatDateRange } from '@utils'
-import { Button } from '@components/common'
+import { Button, Seo } from '@components/common'
 import { TimelineEntry, SkillGroup, CertificationCard } from '@components/resume'
 import styles from './ResumePage.module.css'
 
@@ -14,10 +13,11 @@ const ResumePage: React.FC = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Resume — {profile.personalInfo.name}</title>
-        <meta name="description" content="Experience, education, skills, and certifications." />
-      </Helmet>
+      <Seo
+        title={`Resume — ${profile.personalInfo.name}`}
+        description={`Experience, education, skills, and certifications for ${profile.personalInfo.name}, ${profile.personalInfo.title}.`}
+        path="/resume"
+      />
 
       <section className={`container ${styles.page}`} aria-labelledby="resume-title">
         <div className={styles.header}>

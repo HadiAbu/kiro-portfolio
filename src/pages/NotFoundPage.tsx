@@ -11,6 +11,7 @@ const NotFoundPage: React.FC = () => {
       <Helmet>
         <title>Page Not Found — {profile.personalInfo.name}</title>
         <meta name="description" content="The page you were looking for does not exist." />
+        <meta name="robots" content="noindex, follow" />
       </Helmet>
       <section className={styles.container}>
         <h1 className={styles.code}>404 — Page Not Found</h1>

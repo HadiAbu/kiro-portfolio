@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react'
-import { Helmet } from 'react-helmet-async'
 import { profile, projects } from '@data'
 import { sortByDate } from '@utils'
+import { Seo } from '@components/common'
 import { ProjectCard } from '@components/sections'
 import styles from './ProjectsPage.module.css'
 
@@ -31,10 +31,11 @@ const ProjectsPage: React.FC = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Projects — {profile.personalInfo.name}</title>
-        <meta name="description" content="A selection of projects I've built." />
-      </Helmet>
+      <Seo
+        title={`Projects — ${profile.personalInfo.name}`}
+        description="A selection of projects I've built — AI-powered apps, full-stack systems, and DevOps infrastructure."
+        path="/projects"
+      />
       <section className={`container ${styles.page}`} aria-labelledby="projects-title">
         <h1 id="projects-title">Projects</h1>
         <p className={styles.intro}>
