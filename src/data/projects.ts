@@ -2,6 +2,18 @@ import type { Project } from '@types'
 
 export const projects: Project[] = [
   {
+    id: 'neuroplasticity',
+    name: 'Neuroplasticity',
+    description:
+      'An interactive 3D neuroscience game — cause a lesion, predict the resulting deficit, then watch the brain rewire in real time. Built with React Three Fiber and Three.js for the 3D brain visualisation.',
+    thumbnail: '/images/projects/neuroplasticity.png',
+    technologies: ['React', 'TypeScript', 'Three.js', 'React Three Fiber', 'Tailwind CSS', 'Vite'],
+    demoUrl: 'https://neuropalsticity.vercel.app/',
+    repositoryUrl: 'https://github.com/HadiAbu/neuropalsticity',
+    featured: true,
+    completionDate: '2026-09-18',
+  },
+  {
     id: 'ai-philosophy',
     name: 'AI Philosophy',
     description:
