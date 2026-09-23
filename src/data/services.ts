@@ -2,34 +2,34 @@ import type { Service } from '@types'
 
 export const services: Service[] = [
   {
-    id: 'ai-systems',
-    title: 'AI-Powered Systems',
+    id: 'test-automation',
+    title: 'Test Automation & QA Engineering',
     description:
-      'Production RAG pipelines, agent systems, and LLM-backed services — designed, evaluated, and deployed with FastAPI, Pinecone, and MCP.',
-    icon: 'cpu',
-    category: 'development',
-  },
-  {
-    id: 'agentic-dev-tooling',
-    title: 'Agentic Workflows & Dev Tooling',
-    description:
-      'Autonomous agent workflows and internal developer tools — n8n and Redis event pipelines, model evaluation harnesses, and coding-agent integrations with Claude Code and Cursor.',
+      'Automated test frameworks, regression and integration suites, and object-oriented framework design — built in Python to keep complex systems honest across lab, cloud, and embedded platforms.',
     icon: 'code',
     category: 'development',
   },
   {
-    id: 'system-design',
-    title: 'System Design & Architecture',
+    id: 'cicd-lab-infra',
+    title: 'CI/CD & Lab Infrastructure',
     description:
-      'End-to-end architecture for services that scale — microservices, async event flows, auth, search, and load balancing, containerised and shipped through CI/CD.',
+      'CI/CD pipelines and lab/staging environments — Jenkins, Docker, GitHub Actions, and AWS — that isolate, reproduce, and catch edge-case bugs before release.',
     icon: 'cloud',
+    category: 'development',
+  },
+  {
+    id: 'ai-test-tooling',
+    title: 'AI-Assisted Test Tooling',
+    description:
+      'Kiro Spec-Driven Development alongside Claude Code and Cursor to iterate on test frameworks and debug edge cases faster, plus n8n/Redis pipelines for asynchronous event testing.',
+    icon: 'cpu',
     category: 'development',
   },
   {
     id: 'technical-consulting',
     title: 'Technical Consulting',
     description:
-      'Translating ambiguous requirements into clear technical specifications, architecture decisions, and delivery roadmaps.',
+      'Working directly with development teams to assess component testability, mitigate quality risks, and troubleshoot complex system behaviour before release.',
     icon: 'lightbulb',
     category: 'development',
   },
